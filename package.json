@@ -1,6 +1,12 @@
 {
   "name": "Murtabot",
   "version": "1.0.0",
+  "description": "Meça sua esfericidade, parça.",
   "main": "bot.js",
-  "license": "MIT"
+  "license": "MIT",
+  "author": "Tony Stonks",
+  "dependencies": {
+    "discord.io": "^2.5.3",
+    "winston": "^3.3.3"
+  }
 }
