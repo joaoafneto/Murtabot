@@ -116,4 +116,4 @@ dist
 .pnp.*
 
 # stores bot token
-.auth.json
+config.json
