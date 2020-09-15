@@ -6,7 +6,7 @@
   "license": "MIT",
   "author": "Tony Stonks",
   "scripts": {
-    "start": "nodemon bot.js"
+    "start": "node bot.js"
   },
   "dependencies": {
     "discord.js": "^12.3.1",
