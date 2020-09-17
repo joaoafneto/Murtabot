@@ -117,3 +117,4 @@ dist
 
 # stores bot token
 config.json
+.env
