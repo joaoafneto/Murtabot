@@ -24,9 +24,11 @@ client.on('message', function(message) {
 
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if(!command) return;
+
     if(command.guildOnly && message.channel.type === 'dm') {
         return message.reply('I can\'t execute that command inside DMs!');
     }
+
     if(command.args && !args.length) {
         let reply = message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         if(command.usage) {
@@ -37,6 +39,7 @@ client.on('message', function(message) {
     if(!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Discord.Collection());
     }
+
     const now = Date.now();
     const timestamps = cooldowns.get(command.name);
     const cooldownAmount = (command.cooldown || 3) * 1000;
@@ -50,6 +53,7 @@ client.on('message', function(message) {
     }
     timestamps.set(message.author.id, now);
     setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+
     try{
         command.execute(message, args);
     }
