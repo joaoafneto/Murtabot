@@ -15,6 +15,10 @@ for(const file of commandFiles) {
 }
 
 client.on('message', function(message) {
+    client.setInterval(() => {
+        const c = message.client.users.cache.get('757736116605419621');
+        message.channel.send(`${c} eu quero que você vá para a puta que o pariu`);
+    }, 300000);
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
 
